@@ -1,0 +1,27 @@
+<?php
+/** @var Tsintsadze\Linkedin\Block\Linkedin $block */
+/** @var  Tsintsadze\Linkedin\Setup\Patch\Data\AddLinkedin $patch */
+?>
+
+<?php if ($block->getReceiveLinkedin() !== '0' && $block->getReciveLinkedin() !== '1'): ?>
+    <fieldset class="fieldset create account" data-hasrequired="<?php  echo __('* Required Fields') ?>">
+        <div class="field regulation">
+            <label for="regulation" class="label"><span><?php  echo __('Linkedin') ?></span></label>
+            <div class="control">
+                <input type="text" value="<?= $block->getLinkedin(); ?>" name="Linkedin" id="Linkedin" title="<?php  echo __('Linkedin') ?>" class="input-text" data-validate="{required:true}">
+            </div>
+        </div>
+    </fieldset>
+<?php endif; ?>
+
+<?php if ($block->getReceiveLinkedin() === '1'): ?>
+    <div class="field regulation">
+        <label for="regulation" class="label"><span><?php  echo __('Linkedin') ?></span></label>
+        <div class="control">
+            <input type="text" name="Linkedin" value="<?= $block->getLinkedin(); ?>" id="Linkedin" title="<?php  echo __('Linkedin') ?>" class="input-text" data-validate="{required:false}">
+        </div>
+    </div>
+<?php endif; ?>
+
+<!--Magento\Customer\Block\Widget\Name-->
+
